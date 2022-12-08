@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("Montserrat-VariableFont_wght.ttf") 
+}
+
+body {
+  font-family: 'Montserrat';
+  margin: 0;
+}
+
+
