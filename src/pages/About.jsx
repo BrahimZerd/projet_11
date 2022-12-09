@@ -1,12 +1,24 @@
+import LayoutAbout from "../components/LayoutAbout";
+import colors from '../utils/colors';
+import Test from "../components/DropdownFiabiliteAbout";
+import styled from "styled-components";
 
-
-
+const StyledDiv = styled.div`
+`
 
 
 
 function About() {
+    
     return(
-        <div> a propos</div>
+    <div> 
+        <LayoutAbout />
+        <Test />
+    </div>
+    
+        
+        
+        
     )
 }
 

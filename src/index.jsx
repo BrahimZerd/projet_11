@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './pages/Home';
 import About from  './pages/About'
-import Bedroom from './pages/Bedroom'
+import Location from './pages/Location'
 import Error from './components/Error404'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -13,15 +13,15 @@ import {createGlobalStyle} from 'styled-components';
 
 
 
+
 const GlobalStyle = createGlobalStyle`
     
     nav {
         float: right;
         margin-top: 25px;
-        
-       
-    }`
+  }`
 
+  
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -31,13 +31,16 @@ root.render(
       <Routes>
       <Route path='/' element={<Home />} />
       <Route path ='/about' element={<About />} />
-      <Route path ='bedroom/${id}' element={<Bedroom />} />
+      <Route path ='location/${id}' element={<Location />} />
       <Route path ='*' element={<Error />} />
       </Routes>
       <Footer />
     </Router>
   </React.StrictMode>
 );
+
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

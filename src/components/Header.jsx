@@ -11,7 +11,7 @@ font-size: 24px;
 color: ${colors.primary};
 text-decoration: none;
 font-weight: 500;
-padding: 57px;
+
 &:hover{
     text-decoration: underline;
 }
@@ -27,8 +27,8 @@ function Header () {
         <StyledLogo src={LOGO} alt='logo' />
         
         <nav>
-        <StyledLink to="/">Accueil</StyledLink>
-        <StyledLink to='/about'>A propos</StyledLink>
+        <StyledLink id ="home" style={{marginRight:'57px'}} to="/">Accueil</StyledLink>
+        <StyledLink id="about" to='/about'>A propos</StyledLink>
         </nav>
         </StyledDiv>
     )
