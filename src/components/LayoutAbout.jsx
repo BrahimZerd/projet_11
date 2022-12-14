@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import ImgAbout from '../assets/LayoutAbout.png'
-import dropdownAbout from "./DropdownFiabiliteAbout"
+import dropdownAbout from "./DropdownAbout"
 
     
 
