@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import LOGO from '../assets/LOGO.png' 
 import colors from '../utils/colors'
+import * as React from 'react';
 
 const StyledLogo = styled.img`
 position: relative;
@@ -22,13 +23,23 @@ margin: 100px;`
 
 
 function Header () {
+
+    function  homeClick() {
+        document.getElementById('home').style.textDecoration = "underline";
+        document.getElementById('about').style.textDecoration = "none";
+    }
+    function  aboutClick() {
+        document.getElementById('home').style.textDecoration = "none";
+        document.getElementById('about').style.textDecoration = "underline";
+    }
+    
     return(
         <StyledDiv>
         <StyledLogo src={LOGO} alt='logo' />
         
         <nav>
-        <StyledLink id ="home" style={{marginRight:'57px'}} to="/">Accueil</StyledLink>
-        <StyledLink id="about" to='/about'>A propos</StyledLink>
+        <StyledLink id='home' onClick={homeClick} style={{marginRight:'57px'}} to="/">Accueil</StyledLink>
+        <StyledLink  id= 'about' onClick={aboutClick} to='/about'>A propos</StyledLink>
         </nav>
         </StyledDiv>
     )

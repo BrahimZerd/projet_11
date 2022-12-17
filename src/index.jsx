@@ -20,7 +20,42 @@ const GlobalStyle = createGlobalStyle`
     nav {
         float: right;
         margin-top: 25px;
-  }`
+  }
+  
+  .card {
+    margin: 50px;
+    padding-top: 50px;
+    padding-bottom:50px;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-gap: 60px;
+    margin-bottom: 100px;
+    
+
+  }
+  .cardDiv {
+    
+    border-radius: 15px;
+    background-color: red;
+    position: relative;
+  }
+  .cardImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+  
+  }
+
+  .cardTitle {
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 19px;
+  }
+  `
+
+ 
 
   
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,10 +64,11 @@ root.render(
     <Router>
     <GlobalStyle />
     <Header />
+    
       <Routes>
       <Route path='/' element={<Home />} />
       <Route path ='/about' element={<About />} />
-      <Route path ='location/${id}' element={<Location />} />
+      <Route path ='/:id' element= {<Location  />} />
       <Route path ='*' element={<Error />} />
       </Routes>
       <Footer />

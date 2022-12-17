@@ -17,7 +17,10 @@ display: flex;
 line-height: 45px;
 justify-content: space-between;
 padding-left: 15px;
-margin-top:  33px;`
+margin-top:  33px;
+&:hover{
+  cursor: pointer;
+}`
 
 const StyledImg = styled.img`
 width:  19.6px;
@@ -27,7 +30,9 @@ right: 2%;
 top: 33%;`
 
 
-
+const StyledText = styled.p`
+margin-left: 18px;
+padding-bottom: 14px;`
 
 
 
@@ -50,7 +55,7 @@ function Dropdown(props) {
         
         <div className={props.className}>
         <StyledButton onClick={handleOpen}>{props.name}<StyledImg id ={props.id} src={arrow} alt ="arrow" /></StyledButton>
-        {open ? <div className="hidden"></div> : <div className="openDrop">{props.description}</div>}
+        {open ? <div className="hidden"></div> : <div className="openDrop"><StyledText>{props.description}</StyledText></div>}
       </div>
       
         
