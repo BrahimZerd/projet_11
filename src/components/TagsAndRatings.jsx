@@ -41,7 +41,8 @@ function TagsAndRates() {
         return(
             
             filter.map((elemnt => 
-              <div style={{display: 'flex', marginLeft:'90px'}}key={elemnt.id}>{elemnt.tags.map(tag => 
+              <div style={{display: 'flex', marginLeft:'90px'}}key={elemnt.id}>
+                {elemnt.tags.map(tag => 
               <StyledSpan>{tag}</StyledSpan>)}
               </div>  
             ))
