@@ -69,7 +69,7 @@ root.render(
       <Route path='/' element={<Home />} />
       <Route path ='/about' element={<About />} />
       <Route path ='/:id' element= {<Location  />} />
-      <Route path ='*' element={<Error />} />
+      <Route path ='/error' element={<Error />} />
       </Routes>
       <Footer />
     </Router>
