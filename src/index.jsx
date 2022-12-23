@@ -7,7 +7,7 @@ import Location from './pages/Location'
 import Error from './components/Error404'
 import Header from './components/Header'
 import Footer from './components/Footer'
-
+import { useParams } from 'react-router-dom';
 //import reportWebVitals from './reportWebVitals';
 import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 import {createGlobalStyle} from 'styled-components';
@@ -24,19 +24,16 @@ const GlobalStyle = createGlobalStyle`
   
   .card {
     margin: 50px;
-    padding-top: 50px;
-    padding-bottom:50px;
-    display: grid;
-    grid-template-columns: repeat(3 , 1fr);
-    grid-gap: 60px;
-    margin-bottom: 100px;
+    
+   
+   
     
 
   }
   .cardDiv {
     
     border-radius: 15px;
-    background-color: red;
+    height: 100%;
     position: relative;
   }
   .cardImg{
@@ -68,7 +65,7 @@ root.render(
       <Routes>
       <Route path='/' element={<Home />} />
       <Route path ='/about' element={<About />} />
-      <Route path ='/:id' element= {<Location  />} />
+      <Route path ="/:id" element= {<Location  />} />
       <Route path ='/error' element={<Error />} />
       </Routes>
       <Footer />

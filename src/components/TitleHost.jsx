@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
+
 import styled from "styled-components";
-import React, {useState , useEffect} from "react";
+import React from "react";
 import colors from '../utils/colors'
 
 const StyledTitle = styled.div`
@@ -25,49 +25,34 @@ width: 64px;
 border-radius: 50%;
 `
 
-function TitleAuthor() {
-    const [data, setData] = useState([]);
+function TitleHost(props) {
     
-    const params = useParams();
-   
-
     
-        const fetchData = async () => {
-            const result = await fetch(`../data.json`);
-            result.json()
-                .then(json => {
-                setData(json)
-                
-            })
-        }
-        useEffect (() => {fetchData();}
-    , [])
-        const filter = data.filter(element => element.id === params.id)
-        console.log(filter)
         
-        return(
+         return(
             
-            filter.map((elemnt => 
+            
                 
-            <div  key ={elemnt.id}style={{display: 'flex', justifyContent: 'space-between', height: "230px"}}>
-            <StyledTitle>
-                <h1>{elemnt.title}</h1>
-                <h2 style={{lineHeight: '0px'}}>{elemnt.location}</h2>
+             <div  style={{display: 'flex', justifyContent: 'space-between', height: "230px"}}>
+             <StyledTitle>
+                 <h1>{props.title}</h1>
+                <h2 style={{lineHeight: '0px'}}>{props.city}</h2>
             </StyledTitle>
-            <StyledAuthor>
-                <span style={{ margin:"10px",width: "75px",textAlign: "right"}}>{elemnt.host.name}</span>
-                <StyledImghost src={elemnt.host.picture} alt="host" />
-            </StyledAuthor>
+             <StyledAuthor>
+              
+                
+                <span style={{ margin:"10px",width: "75px",textAlign: "right"}}>{props.host}</span>
+                <StyledImghost src= {props.picture} alt="host" />
+             </StyledAuthor>
                 
                     
                 
            
-            </div>))
-            
-            
-         )
+            </div>)
+          
+         
          
      
     }
 
-    export default TitleAuthor
+    export default TitleHost

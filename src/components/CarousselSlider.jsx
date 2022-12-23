@@ -12,35 +12,20 @@ display: block;
 object-fit: cover;
 margin-left: auto;
 margin-right: auto;
-border-radius: 25px;`
+border-radius: 25px;
+transition-duration: 3s;`
 
-function Caroussel() {
+function Caroussel(props) {
 
 
-    const [data, setData] = useState([]);
+    
     const [count, setCount] = useState(0);
-    
-    
-    const params = useParams();
    
-
-    
-        const fetchData = async () => {
-            const result = await fetch(`../data.json`);
-            result.json()
-                .then(json => {
-                setData(json)
-                
-            })
-        }
-        useEffect (() => {fetchData();}
-    , [])
-        const filter = data.filter(element => element.id === params.id)
        
         function plusCounter(){
             
-            filter.map(element => {
-                if(count === element.pictures.length-1){
+            
+                if(count === props.pictures.length-1){
                     const next = document.getElementById('arrowNext');
                     next.style.display  ="none";
                     
@@ -51,7 +36,8 @@ function Caroussel() {
                     next.style.display ="block"
                     setCount(count + 1)
                 }
-            })
+                return true;
+            
             
             
         }
@@ -69,19 +55,22 @@ function Caroussel() {
                     setCount(count - 1)
             }
         }
+       
+
+
         
     return (
         
-        filter.map(element =>
-            <div style={{position: 'relative'}}>
-                <p>{count}</p>
+        
+            <div style={{position: 'relative', }}>
+                
             <button onClick={() => minusCounter()} className="arrowPrevious" id="arrowPrevious" ><img src={SliderArrow} alt="arrow" /></button>
-        <div className="SliderConteneur"><StyledImg src={element.pictures[count]} alt="{element.pictures}"/></div>
+        <div className="SliderConteneur"><StyledImg src={props.pictures[count]} alt="{element.pictures}"/></div>
         <button  onClick={() => plusCounter()} className="arrowNext"id="arrowNext" ><img src={SliderArrow} alt="arrow" /></button>
         </div>)
-    )
+    
 }
 
 
 
-export default Caroussel;
+export default Caroussel

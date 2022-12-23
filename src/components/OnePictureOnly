@@ -1,0 +1,14 @@
+
+
+
+
+
+function OnepicSlide(props) {
+    
+        props.pictures.length === 1 ? document.getElementById('arrowPrevious').style.display = "none" : document.getElementById('arrowPrevious').style.display = "block"
+
+    
+
+}
+
+export default OnepicSlide

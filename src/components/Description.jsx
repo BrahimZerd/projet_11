@@ -41,30 +41,11 @@ padding-bottom: 14px;`
 
 
 
-function Description() {
+function Description(props) {
+  console.log(props)
     const [open, setOpen] = React.useState(false);
     const [openEquip,  setOpenEquipement] = React.useState(false);
-    const [data, setData] = useState([]);
-    
-    const params = useParams();
    
-
-    
-        const fetchData = async () => {
-            const result = await fetch(`../data.json`);
-            result.json()
-                .then(json => {
-                setData(json)
-                
-            })
-        }
-        useEffect (() => {fetchData();}
-    , [])
-        const filter = data.filter(element => element.id === params.id)
-
-
-    
-
   const openDescription = () => {
     setOpen(!open);
     const rotate = document.getElementById('arrowDescription');
@@ -81,27 +62,28 @@ function Description() {
   }
         
     return(
-        filter.map(element  =>  
-        <div style={{ display:'flex',justifyContent: 'space-between',margin:'100px', marginBottom: '250px'}}>
+        
+        <div style={{ display:'flex',justifyContent: 'space-between',margin: '0px 100px 250px 100px'}}>
             <div>
         <StyledButton onClick={openDescription}>Description<StyledImg id="arrowDescription" src={arrow} alt ="arrow" /></StyledButton>
         {open ? 
         <div className="hidden"></div> : <div className="openDescription">
-            <StyledText>{element.description}</StyledText>
+            <StyledText>{props.description}</StyledText>
         </div>}
         </div>
         <div>
         <StyledButton onClick={openEquipements}>Equipements<StyledImg id="arrowEquipements" src={arrow} alt ="arrow" /></StyledButton>
 
         {openEquip ? 
+        
         <div className="hidden"></div> : <div className="openEquipements">
-            <ul>{element.equipments.map(equipement =>  <li>{equipement}</li>)}</ul>
+            <ul>{props.equipments.map((equipement)  => (<li> {equipement}</li>))}</ul>
         </div>}
         </div>
       </div>
       
         
-    ))
+    )
 
 }
 
