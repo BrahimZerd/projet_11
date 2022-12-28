@@ -2,8 +2,8 @@ import Layout from '../components/LayoutHome';
 import '../App.css';
 import styled from 'styled-components';
 import CardList from '../components/Card';
-import data from '../assets/data.json'
-import { useParams } from 'react-router-dom';
+import data from '../data/data.json'
+
 
 
 const BodyDiv = styled.div`

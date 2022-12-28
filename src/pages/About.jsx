@@ -1,10 +1,7 @@
 import LayoutAbout from "../components/LayoutAbout";
-import colors from '../utils/colors';
 import Dropdown from "../components/DropdownAbout";
-import styled from "styled-components";
-import aboutdata from "../../src/assets/about.json"
-const StyledDiv = styled.div`
-`
+import aboutdata from "../data/about.json"
+
 
 
 

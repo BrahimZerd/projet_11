@@ -7,50 +7,14 @@ import Location from './pages/Location'
 import Error from './components/Error404'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { useParams } from 'react-router-dom';
+
+import { Navigate } from 'react-router-dom';
 //import reportWebVitals from './reportWebVitals';
 import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
-import {createGlobalStyle} from 'styled-components';
 
 
 
 
-const GlobalStyle = createGlobalStyle`
-    
-    nav {
-        float: right;
-        margin-top: 25px;
-  }
-  
-  .card {
-    margin: 50px;
-    
-   
-   
-    
-
-  }
-  .cardDiv {
-    
-    border-radius: 15px;
-    height: 100%;
-    position: relative;
-  }
-  .cardImg{
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-  
-  }
-
-  .cardTitle {
-    position: absolute;
-    bottom: 0;
-    font-size: 18px;
-    color: #FFFFFF;
-    margin-left: 19px;
-  }
-  `
 
  
 
@@ -59,7 +23,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-    <GlobalStyle />
+   
     <Header />
     
       <Routes>
@@ -67,7 +31,11 @@ root.render(
       <Route path ='/about' element={<About />} />
       <Route path ="/:id" element= {<Location  />} />
       <Route path ='/error' element={<Error />} />
+      <Route path="/redirect" element={ <Navigate to="/error" /> } />
+
       </Routes>
+      
+    
       <Footer />
     </Router>
   </React.StrictMode>

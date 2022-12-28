@@ -1,11 +1,8 @@
-import React, {useState , useEffect} from "react";
-import styled from 'styled-components';
+import React from "react";
 import { Link } from 'react-router-dom';
 
 
-const StyledLink = styled(Link)`
-text-decoration: none;
-`
+
 
 
 function CardList(props) {
@@ -15,10 +12,10 @@ function CardList(props) {
         <div className="card">
             
                     <div  key={props.id} className="cardDiv">
-                    <StyledLink to= {props.id}  >
+                    <Link className="card_link" to= {props.id}  >
                         <h5 className="cardTitle"> {props.title}</h5>
                         <img className="cardImg" src= {props.cover} alt= 'coverCard' />
-                    </StyledLink>
+                    </Link>
                     </div>
                
         </div>

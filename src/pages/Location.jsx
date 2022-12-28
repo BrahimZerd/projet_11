@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
-import data from '../assets/data.json'
+import data from '../data/data.json'
 import React from "react";
 import TitleHost from "../components/TitleHost";
 import Tags from "../components/Tags";
 import Description from "../components/Description";
 import Caroussel from "../components/CarousselSlider";
 import BasicFn from '../components/Rate'
+import { useNavigate, useEffect } from "react-router-dom";
 import OnepicSlide from "../components/OnePictureOnly";
+import NewComponent from "../hook/navigate";
 function Location() {
 
 
@@ -15,13 +17,20 @@ function Location() {
 
     const filtered = data.find((element) => element.id === id );
     
-
+    
+   if(id !== filtered.id) {
+    console.log('différent')
+   } else {
+    console.log('pas différent')
+   }
+     
     
    
         
    return( 
         
             <div>
+                
              <Caroussel
              pictures= {filtered.pictures}
              
