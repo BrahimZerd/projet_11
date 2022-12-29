@@ -23,8 +23,10 @@ function Description(props) {
   const openDescription = () => {
     setOpen(!open);
     const rotate = document.getElementById('arrowDescription');
-    
-    {open ? rotate.style.transform = 'rotate(180deg)' : rotate.style.transform = 'rotate(0deg)'}
+    if(open) 
+    {rotate.style.transform = 'rotate(180deg)'}
+    else 
+    { rotate.style.transform = 'rotate(0deg)'}
     
   };
    
@@ -32,7 +34,10 @@ function Description(props) {
     setOpenEquipement(!openEquip);
     const rotate = document.getElementById('arrowEquipements');
     
-    {openEquip ? rotate.style.transform = 'rotate(180deg)' : rotate.style.transform = 'rotate(0deg)'}
+    if(openEquip)
+    {rotate.style.transform = 'rotate(180deg)'}
+    else
+    { rotate.style.transform = 'rotate(0deg)'}
   }
         
     return(
