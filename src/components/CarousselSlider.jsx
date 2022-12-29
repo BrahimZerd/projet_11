@@ -45,7 +45,7 @@ function Caroussel(props) {
         }
        
 
-
+    if(props.pictures.length > 1){
         
     return (
         
@@ -55,7 +55,15 @@ function Caroussel(props) {
             <button onClick={() => minusCounter()} className="arrowPrevious" id="arrowPrevious" ><img src={SliderArrow} alt="arrow" /></button>
         <div className="SliderConteneur"><img className="img_container" src={props.pictures[count]} alt="{element.pictures}"/><p className="counterSlider">{count+1}/{props.pictures.length}</p></div>
         <button  onClick={() => plusCounter()} className="arrowNext"id="arrowNext" ><img src={SliderArrow} alt="arrow" /></button>
+        </div>)} 
+    else {
+    return(
+            <div style={{position: 'relative', }}>
+                
+        <div className="SliderConteneur"><img className="img_container" src={props.pictures[count]} alt="{element.pictures}"/><p className="counterSlider">{count+1}/{props.pictures.length}</p></div>
         </div>)
+            
+        }
     
 }
 

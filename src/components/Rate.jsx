@@ -10,9 +10,9 @@ function BasicFn  (props)  {
   const activeStars = props.rate;
 
   return (
-    <div style={{marginRight: '6%'}}>
+    <div  className ="divStars" style={{marginRight: '6%'}}>
       {[...new Array(totalStars)].map((arr, index) => {
-        return index < activeStars ? <img src={full} alt="pleine" /> : <img src={empty} alt="vide" />;
+        return index < activeStars ? <img className="stars" src={full} alt="pleine" /> : <img className="stars" src={empty} alt="vide" />;
       })}
     </div>
   );

@@ -37,7 +37,7 @@ function Description(props) {
         
     return(
         
-        <div style={{ display:'flex',justifyContent: 'space-between',margin: '0px 100px 250px 100px'}}>
+        <div className="descriptionEquipement">
             <div>
         <button className="button_open" onClick={openDescription}>Description<img id="arrowDescription" src={arrow} alt ="arrow" /></button>
         {open ? 

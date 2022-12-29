@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
 import Home from './pages/Home';
 import About from  './pages/About'
 import Location from './pages/Location'
 import Error from './components/Error404'
 import Header from './components/Header'
 import Footer from './components/Footer'
-
 import { Navigate } from 'react-router-dom';
+import './index.css';
 //import reportWebVitals from './reportWebVitals';
 import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
-
 
 
 
@@ -32,6 +31,8 @@ root.render(
       <Route path ="/:id" element= {<Location  />} />
       <Route path ='/error' element={<Error />} />
       <Route path="/redirect" element={ <Navigate to="/error" /> } />
+     
+      
 
       </Routes>
       

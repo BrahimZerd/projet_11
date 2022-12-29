@@ -16,7 +16,7 @@ function TitleHost(props) {
             
             
                 
-             <div  style={{display: 'flex', justifyContent: 'space-between', height: "230px"}}>
+             <div className="divTitle" >
              <div className="title">
                  <h1>{props.title}</h1>
                 <h2 style={{lineHeight: '0px'}}>{props.city}</h2>

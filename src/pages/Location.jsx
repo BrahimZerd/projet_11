@@ -6,9 +6,9 @@ import Tags from "../components/Tags";
 import Description from "../components/Description";
 import Caroussel from "../components/CarousselSlider";
 import BasicFn from '../components/Rate'
-import { useNavigate, useEffect } from "react-router-dom";
-import OnepicSlide from "../components/OnePictureOnly";
-import NewComponent from "../hook/navigate";
+
+import { Navigate } from 'react-router-dom';
+
 function Location() {
 
 
@@ -17,18 +17,17 @@ function Location() {
 
     const filtered = data.find((element) => element.id === id );
     
-    
-   if(id !== filtered.id) {
-    console.log('différent')
-   } else {
-    console.log('pas différent')
-   }
+  if (filtered === undefined) {
+    return(
+        <Navigate to='/error' />
+    )
+  }
      
     
    
         
    return( 
-        
+
             <div>
                 
              <Caroussel
@@ -44,7 +43,7 @@ function Location() {
                 city = {filtered.location}
                 picture =  {filtered.host.picture}
                 />
-            <div style={{display: 'flex',marginLeft: '90px', justifyContent: "space-between"}}>
+            <div className="tagDiv">
                 <div style={{display:"flex"}}>
             <Tags 
                 tags = {filtered.tags}
