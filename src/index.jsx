@@ -7,17 +7,10 @@ import Location from './pages/Location'
 import Error from './components/Error404'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { Navigate } from 'react-router-dom';
 import './index.css';
 //import reportWebVitals from './reportWebVitals';
 import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
-
-
-
-
- 
-
-  
+//page de routage
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -30,14 +23,11 @@ root.render(
       <Route path ='/about' element={<About />} />
       <Route path ="/:id" element= {<Location  />} />
       <Route path ='/error' element={<Error />} />
-      <Route path="/redirect" element={ <Navigate to="/error" /> } />
-     
       
+     </Routes>
 
-      </Routes>
-      
+    <Footer />
     
-      <Footer />
     </Router>
   </React.StrictMode>
 );

@@ -51,6 +51,7 @@ function Location() {
             />
             </div>
             <BasicFn 
+              id = {filtered.id}
               rate = {filtered.rating}
             />
             </div>

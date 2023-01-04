@@ -1,41 +1,25 @@
 
 import React from "react";
 
-
-
-
-
-
-
+//élément de la page de Location pour le titre et le nom/photo du propriétaire
 
 function TitleHost(props) {
     
     
         
          return(
-            
-            
-                
-             <div className="divTitle" >
+        <div className="divTitle" >
              <div className="title">
                  <h1>{props.title}</h1>
-                <h2 style={{lineHeight: '0px'}}>{props.city}</h2>
+                 <h2 style={{lineHeight: '0px'}}>{props.city}</h2>
             </div>
-             <div className="authorDiv">
-              
-                
+            <div className="authorDiv">
                 <span style={{ margin:"10px",width: "75px",textAlign: "right"}}>{props.host}</span>
                 <img className="hostImg" src= {props.picture} alt="host" />
              </div>
                 
-                    
-                
-           
-            </div>)
-          
-         
-         
-     
-    }
+        </div>
+        )
+}
 
     export default TitleHost

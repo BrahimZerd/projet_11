@@ -1,11 +1,7 @@
 import LayoutHome from '../assets/LayoutHome.png'
 
 
-
-
-
-
-
+//image de la page d'Accueil
 
 function Layout() {
     

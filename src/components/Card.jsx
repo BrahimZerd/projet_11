@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-
+//element Card comprenant photo + titre
 
 
 function CardList(props) {

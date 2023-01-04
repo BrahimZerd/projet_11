@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 
-
+//page d'erreur pour chemin d'accès érronné
 
 
 function errorPage() {

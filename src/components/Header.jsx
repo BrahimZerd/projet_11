@@ -3,12 +3,12 @@ import LOGO from '../assets/LOGO.png'
 import * as React from 'react';
 
 
-
+//header comprenant le logo & l'élément de navigation
 
 
 
 function Header () {
-
+        //underline des éléments au clic
     function  homeClick() {
         document.getElementById('home').style.textDecoration = "underline";
         document.getElementById('about').style.textDecoration = "none";

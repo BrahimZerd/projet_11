@@ -4,22 +4,15 @@ import arrow from '../assets/arrow.png'
 
 
 
-
-
-
-
-
-
-
-
-
+//function Description & Equipements
 
 
 function Description(props) {
-  console.log(props)
     const [open, setOpen] = React.useState(true);
     const [openEquip,  setOpenEquipement] = React.useState(true);
    
+
+    //ouverture description
   const openDescription = () => {
     setOpen(!open);
     const rotate = document.getElementById('arrowDescription');
@@ -30,6 +23,7 @@ function Description(props) {
     
   };
    
+    //ouverture Equipements
   const openEquipements = () =>  {
     setOpenEquipement(!openEquip);
     const rotate = document.getElementById('arrowEquipements');

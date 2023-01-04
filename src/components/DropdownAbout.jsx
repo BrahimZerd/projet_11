@@ -7,20 +7,19 @@ import arrow from '../assets/arrow.png'
 
 
 
-
+//Element About
 
 
 function Dropdown(props) {
-  console.log(props)
     const [open, setOpen] = React.useState(false);
     
-    
+    //ouverture 
 
   const handleOpen = () => {
     setOpen(!open);
     const rotate = document.getElementById(`${props.id}`);
     
-    {open ? rotate.style.transform = 'rotate(0deg)' : rotate.style.transform = 'rotate(180deg)'}
+    if(open) {rotate.style.transform = 'rotate(0deg)'} else { rotate.style.transform = 'rotate(180deg)'}
     
   };
    
