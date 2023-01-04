@@ -4,10 +4,11 @@ import ReactDOM from 'react-dom/client';
 import Home from './pages/Home';
 import About from  './pages/About'
 import Location from './pages/Location'
-import Error from './components/Error404'
+import Error from './pages/Error404'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import './index.css';
+import { Navigate } from 'react-router-dom';
 //import reportWebVitals from './reportWebVitals';
 import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 //page de routage
@@ -23,6 +24,9 @@ root.render(
       <Route path ='/about' element={<About />} />
       <Route path ="/:id" element= {<Location  />} />
       <Route path ='/error' element={<Error />} />
+      <Route path="*" element={<Navigate to="/error" />} />
+
+
       
      </Routes>
 
